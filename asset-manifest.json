@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/react-rtk-query-shop/static/css/main.b2495395.css",
+    "main.css": "/react-rtk-query-shop/static/css/main.61c14aba.css",
     "main.js": "/react-rtk-query-shop/static/js/main.dfa1d0ad.js",
     "static/css/522.e4b85d9b.chunk.css": "/react-rtk-query-shop/static/css/522.e4b85d9b.chunk.css",
     "static/js/522.0ad17f0a.chunk.js": "/react-rtk-query-shop/static/js/522.0ad17f0a.chunk.js",
     "index.html": "/react-rtk-query-shop/index.html",
-    "main.b2495395.css.map": "/react-rtk-query-shop/static/css/main.b2495395.css.map",
+    "main.61c14aba.css.map": "/react-rtk-query-shop/static/css/main.61c14aba.css.map",
     "main.dfa1d0ad.js.map": "/react-rtk-query-shop/static/js/main.dfa1d0ad.js.map",
     "522.e4b85d9b.chunk.css.map": "/react-rtk-query-shop/static/css/522.e4b85d9b.chunk.css.map",
     "522.0ad17f0a.chunk.js.map": "/react-rtk-query-shop/static/js/522.0ad17f0a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b2495395.css",
+    "static/css/main.61c14aba.css",
     "static/js/main.dfa1d0ad.js"
   ]
 }
