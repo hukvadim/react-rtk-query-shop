@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/react-rtk-query-shop/static/css/main.61c14aba.css",
-    "main.js": "/react-rtk-query-shop/static/js/main.2636dab2.js",
+    "main.css": "/react-rtk-query-shop/static/css/main.03a1abfc.css",
+    "main.js": "/react-rtk-query-shop/static/js/main.6128880d.js",
     "static/css/522.e4b85d9b.chunk.css": "/react-rtk-query-shop/static/css/522.e4b85d9b.chunk.css",
     "static/js/522.0ad17f0a.chunk.js": "/react-rtk-query-shop/static/js/522.0ad17f0a.chunk.js",
     "index.html": "/react-rtk-query-shop/index.html",
-    "main.61c14aba.css.map": "/react-rtk-query-shop/static/css/main.61c14aba.css.map",
-    "main.2636dab2.js.map": "/react-rtk-query-shop/static/js/main.2636dab2.js.map",
+    "main.03a1abfc.css.map": "/react-rtk-query-shop/static/css/main.03a1abfc.css.map",
+    "main.6128880d.js.map": "/react-rtk-query-shop/static/js/main.6128880d.js.map",
     "522.e4b85d9b.chunk.css.map": "/react-rtk-query-shop/static/css/522.e4b85d9b.chunk.css.map",
     "522.0ad17f0a.chunk.js.map": "/react-rtk-query-shop/static/js/522.0ad17f0a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.61c14aba.css",
-    "static/js/main.2636dab2.js"
+    "static/css/main.03a1abfc.css",
+    "static/js/main.6128880d.js"
   ]
 }
