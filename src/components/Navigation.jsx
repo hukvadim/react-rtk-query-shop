@@ -30,7 +30,7 @@ export default function Navigation() {
 					<div className="navigation__right">
 						<ul className="navigation__item-list">
 							<li className="navigation__item">
-								<Link to={`search`} className="navigation__item-link">
+								<Link to={`search`} className="navigation__item-link" aria-label="Search page">
 									<svg className="icon icon-search"><use href="#icon-search"></use></svg>
 								</Link>
 							</li>

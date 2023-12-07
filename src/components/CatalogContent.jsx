@@ -3,7 +3,6 @@ import { addToCart } from '../store/cartSlice';
 import ProductCard from './ProductCard';
 
 const CatalogContent = ({ products, loading, error }) => {
-	console.log("loading: ", loading, products);
 	
 	// Формуємо зверення до сховища
 	const dispatch = useDispatch();
@@ -11,20 +10,20 @@ const CatalogContent = ({ products, loading, error }) => {
 	// Добавляємо товар в корзину
     const setAddToCart = (productId) => dispatch(addToCart(productId));
 	
+	// Дивимося чи отримали помилку від сервера
+	if (error) return <p className="no-result">Отримали помилку: { error }</p>;
+	
+	// Якщо йде завантаження, повертаємо простий текст
+	if (loading) return <p className="no-result">Завантаження...</p>;
+
 	return (
         <div className="catalog__content">
 
-            {
-			(loading) 
-				? <p className="no-result">Завантаження...</p>
-				: (products.length === 0)
-					? <h2 className="no-result">Товарів не знайдено...</h2>
-					: products.map((product) => (
-						<ProductCard key={product.id} product={product} setAddToCart={setAddToCart} />
-					))
-			}
-
-            {error && <p className="no-result">Виникла помилка: {error}</p>}
+            {(products.length === 0)
+				? <h2 className="no-result">Товарів не знайдено...</h2>
+				: products.map((product) => (
+					<ProductCard key={product.id} product={product} setAddToCart={setAddToCart} />
+				))}
 
         </div>
     );

@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { useGetCategoriesQuery } from '../store/catalogApi';
 
-function CatalogHeader( { categoryId, products, categories } ) {
+function CatalogHeader( { categoryId, productsSumm } ) {
+
+	// Отримуємо дані категорій
+	const {data: categories = []} = useGetCategoriesQuery();
 	
 	return (
 		<div className="catalog__header">
@@ -8,7 +12,7 @@ function CatalogHeader( { categoryId, products, categories } ) {
 				<h3 className="dropdown-btn">Вибрати категорію</h3>
 				<div className="dropdown-content" id="category-list">
 					
-				<Link to="/" className="dropdown-item">Скинути вибір</Link>
+				<Link to="/" key={0} className="dropdown-item">Скинути вибір</Link>
 				
 				{categories.map(({title, id}) => (
 					<Link to={`/category/${id}`} className={`dropdown-item ${categoryId === id ? 'active' : ''}`} key={id}>{title}</Link>
@@ -16,7 +20,7 @@ function CatalogHeader( { categoryId, products, categories } ) {
 					
 				</div>
 			</div>
-			<h3 className="catalog__products-summ">Знайдено товарів: <span id="view-count-products">{products.length}</span></h3>
+			<h3 className="catalog__products-summ">Знайдено товарів: <span id="view-count-products">{productsSumm}</span></h3>
 		</div>
 	);
 }

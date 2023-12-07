@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { cleanCart } from '../store/cartSlice'
 import { replaceTemplate } from '../utils';
+import { Helmet } from 'react-helmet-async';
 
 export default function Order() {
 	
@@ -94,6 +95,9 @@ export default function Order() {
 
 	return (
 		<div className="article">
+			<Helmet>
+                <title>Оформлення замовлення</title>
+            </Helmet>
 			<div className="container">
 				<h2 className="article__title">Оформити замовлення</h2>
 

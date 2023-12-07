@@ -1,6 +1,7 @@
-const siteUrl = '/react-redux-shop';
+const siteUrl = '/react-rtk-query-shop';
 
 const config = {
+	siteUrl,
 	baseUrl: siteUrl + '/',
 	pathImg: siteUrl + '/img/catalog/',
 	pathImgNoResult: siteUrl + '/img/no-result/',

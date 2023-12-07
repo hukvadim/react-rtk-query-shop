@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import Image from '../ui/Image';
 
 const CartItem = memo(({ product, pathImg, delCartProduct, setItemCountPlus, setItemCountMinus }) => {
 	const { id, title, img, price, count } = product;
@@ -9,7 +10,7 @@ const CartItem = memo(({ product, pathImg, delCartProduct, setItemCountPlus, set
 			<button className="cart-added-list__item-btn-delete btn-light" onClick={() => delCartProduct(id)}>
 				<svg className="icon icon-close"><use href="#icon-close"></use></svg>
 			</button>
-			<img src={pathImg + img} alt="" className="cart-added-list__item-img" />
+			<Image src={pathImg + img} alt={title} className="cart-added-list__item-img" />
 			<p className="cart-added-list__item-text-hold">
 				<span className="cart-added-list__item-title-link">{title}</span>
 				<span className="cart-added-list__item-meta-list">

@@ -1,27 +1,18 @@
-import React, { useState, useCallback, useEffect } from "react";
-import { useDispatch, useSelector } from 'react-redux';
-import { apiUrl} from '../api/getData';
+import { useCallback, useState } from 'react';
+import { useGetProductsQuery } from '../store/catalogApi';
 import CatalogContent from '../components/CatalogContent';
-import { selectCatalog, fetchCatalog } from '../store/catalogSlice';
+import { Helmet } from 'react-helmet-async';
 
 const Search = () => {
-
-	// Формуємо зверення до сховища
-	const dispatch = useDispatch();
-
-    // Витягуємо дані каталогу
-    const { products, loading, error } = useSelector(selectCatalog);
-
-	// Для роботи поля пошуку
+		
+	// Захищаємо пошук від повторного запитування
 	const [searchTimeId, setSearchTimeId] = useState(0);
 		
-	// Записуємо товари при завантаженні і коли виконувати пошук
-	useEffect(() => {
+	// Захищаємо пошук від повторного запитування
+	const [searchVal, setSearchVal] = useState('');
 
-		// Завантажуємо товари, якщо їх немає
-		dispatch(fetchCatalog());
-
-	}, [dispatch]);
+	// Отримуємо дані товарів
+	const {data: products = [], error, isLoading} = useGetProductsQuery({queryType: 'search', queryKey: searchVal});
 
 	// Пошук товарів
 	const setSearchProducts = useCallback((e) => {
@@ -36,19 +27,23 @@ const Search = () => {
 		const timeId = setTimeout(() => {
 	
 			// Виводимо товари каталогу
-			dispatch(fetchCatalog(apiUrl.search + searchQuery));
-			
+			setSearchVal(searchQuery);
+		
+		// Час затримки в мілісекундах
 		}, 1000);
 	
 		// Зберігаємо id запиту
 		setSearchTimeId(timeId);
 	
 	// Залежності при події пошуку
-	}, [searchTimeId, dispatch]);
-	  
+	}, [searchTimeId]);
+
 
 	return (
 		<div className="catalog" id="catalog">
+			<Helmet>
+                <title>Пошук товарів</title>
+            </Helmet>
 			<div className="container">
 				<div className="catalog__header">
 					<div className="catalog__form">
@@ -63,7 +58,7 @@ const Search = () => {
 						Знайдено товарів: <span className="count-products">{products.length}</span>
 					</h3>
 				</div>
-				<CatalogContent products={products} loading={loading} error={error} />
+				<CatalogContent products={products} loading={isLoading} error={error} />
 			</div>
 		</div>
 	);

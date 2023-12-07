@@ -1,15 +1,21 @@
 import { useParams } from "react-router-dom";
 import Catalog from '../components/Catalog';
-import apiUrl from '../api/Urls';
+import { Helmet } from 'react-helmet-async';
+import { useGetCategoriesByIdQuery } from '../store/catalogApi';
 
 export default function Category() {
 
 	// Отрмиуємо id категорії
 	const { categoryId } = useParams();
-
-	// Формуємо посилання до категорії
-	const fetchUrl = apiUrl.catalogByCategory + categoryId;
+	
+	// Отримуємо дані категорій
+	const {data: catData = false} = useGetCategoriesByIdQuery(categoryId);
 
 	// Виводимо каталог
-	return <Catalog categoryId={categoryId} fetchUrl={fetchUrl} />;
+	return <>
+		<Helmet>
+			<title>{catData ? `Категорія ${catData.title}` :  'Перегляд категорії'}</title>
+		</Helmet>
+		<Catalog categoryId={categoryId} queryType={'category'} />
+	</>;
 }

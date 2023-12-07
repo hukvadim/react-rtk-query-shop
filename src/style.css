@@ -468,6 +468,7 @@ svg {
  */
 .catalog {
     padding-bottom: var(--block-padding);
+    user-select: none;
 }
 
 .catalog .catalog__header {
@@ -487,7 +488,7 @@ svg {
 
 .catalog .catalog__products-summ {
     font-size: 14px;
-    color: #6C798E;
+    color: #495465;
     padding: 11px 0;
     opacity: .72;
     margin: 0;
@@ -594,7 +595,7 @@ svg {
 
 .card-product .card-product__price {
     font-size: 13px;
-    color: #6C798E;
+    color: #38404d;
     font-weight: 500;
 }
 
@@ -1092,7 +1093,7 @@ svg {
 }
 
 .footer .footer__copyright {
-    color: #999;
+    color: #272727;
     font-size: 12px;
     padding-top: 20px;
     margin: 0;
@@ -1101,6 +1102,10 @@ svg {
 .footer .footer__developer {
     display: block;
     padding-top: 8px;
+}
+.footer .footer__developer a.link-hover::before {
+    width: 100%;
+    bottom: -1px;
 }
 
 

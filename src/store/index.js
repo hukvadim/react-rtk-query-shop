@@ -13,7 +13,7 @@ import storage from 'redux-persist/lib/storage';
 
 // Частина нашої корзини
 import cartReducer from './cartSlice';
-import catalogSlice from './catalogSlice';
+import { catalogApi } from './catalogApi';
 
 // Оприділили де будемо все зберігати
 const persistConfig = {
@@ -26,7 +26,7 @@ const persistConfig = {
 // Об'єднуємо всі редюсори
 const rootReducer = combineReducers({
     cart: cartReducer,
-	catalog: catalogSlice
+	[catalogApi.reducerPath]: catalogApi.reducer
 });
 
 // Персістований варіант редюсорів, при кожній зміні сховища persist буде це бачити
@@ -40,7 +40,7 @@ const store = configureStore({
             serializableCheck: {
                 ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
             },
-        }),
+        }).concat(catalogApi.middleware),
 })
 
 // Обгортка сховище. Росказуємо про нашу структуру сховища

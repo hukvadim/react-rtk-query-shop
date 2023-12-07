@@ -1,9 +1,13 @@
+import { Helmet } from 'react-helmet-async';
 import { Link } from "react-router-dom";
 
 export default function Contacts() {
 
 	return (
 		<div className="article">
+			<Helmet>
+                <title>Контакти</title>
+            </Helmet>
 			<div className="container">
 				<h2 className="article__title">Контакти</h2>
 

@@ -9,6 +9,7 @@ const urls = {
 
 // Об'єкт, який експортується як модуль та містить усі необхідні URL
 const apiUrl = {
+    urlPart,
     catalog           : urlPart + 'catalog', // URL для каталогу
     catalogByCategory : urls.apiCatalog + '?catid=', // URL для фільтрації каталогу за категоріями
     category          : urlPart + 'category', // URL для категорій
