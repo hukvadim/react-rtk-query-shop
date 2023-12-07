@@ -8,7 +8,7 @@ export default function ProductCard({ product, setAddToCart }) {
     return (
         <div className="card-product" key={id}>
             <div className="card-product__img-hold" onClick={() => setAddToCart(product)}>
-                <Image src={config.pathImg + img} alt={title} className="card-product__img" />
+                <Image src={config.pathImg + img} alt={title} className="card-product__img" w='264' h='264' />
             </div>
             <div className="card-product__text-hold">
 				<div className="card-product__title-link" onClick={() => setAddToCart(product)}>{title}</div>

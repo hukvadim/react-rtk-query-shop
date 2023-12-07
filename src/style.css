@@ -494,6 +494,12 @@ svg {
     margin: 0;
 }
 
+@media (max-width: 650px) {
+    .catalog .catalog__products-summ {
+        color: #21272f;
+    }
+}
+
 .catalog .catalog__content {
     display: flex;
     justify-content: center;
@@ -567,6 +573,7 @@ svg {
     max-height: 264px;
     border-radius: 15px;
     cursor: pointer;
+    width: auto;
 }
 
 .card-product .card-product__text-hold {

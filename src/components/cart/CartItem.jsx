@@ -10,7 +10,7 @@ const CartItem = memo(({ product, pathImg, delCartProduct, setItemCountPlus, set
 			<button className="cart-added-list__item-btn-delete btn-light" onClick={() => delCartProduct(id)}>
 				<svg className="icon icon-close"><use href="#icon-close"></use></svg>
 			</button>
-			<Image src={pathImg + img} alt={title} className="cart-added-list__item-img" />
+			<Image src={pathImg + img} alt={title} className="cart-added-list__item-img" w='63' h='63' />
 			<p className="cart-added-list__item-text-hold">
 				<span className="cart-added-list__item-title-link">{title}</span>
 				<span className="cart-added-list__item-meta-list">
